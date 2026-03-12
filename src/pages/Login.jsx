@@ -20,7 +20,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center bg-red-100">
+    <div className="flex h-screen items-center justify-center">
       <form onSubmit={submit} className="w-80 space-y-4">
         <input
           placeholder="Username"

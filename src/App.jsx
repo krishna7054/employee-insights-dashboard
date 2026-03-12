@@ -1,20 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-// import './App.css'
-import Login from './pages/Login'
-import { Route, Router, Routes } from 'react-router-dom'
-import ProtectedRoute from './components/ProtectedRoute'
-import List from './pages/List'
-import Details from './pages/Details'
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import List from "./pages/List";
+import Details from "./pages/Details";
+import Result from "./pages/Result";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+
       <Route
         path="/list"
         element={
@@ -23,16 +18,24 @@ function App() {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/details/:id"
         element={
           <ProtectedRoute>
-            <Details/>
+            <Details />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/result"
+        element={
+          <ProtectedRoute>
+            <Result />
           </ProtectedRoute>
         }
       />
     </Routes>
-  )
+  );
 }
-
-export default App

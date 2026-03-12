@@ -12,7 +12,7 @@ export default function VirtualizedTable({ data }) {
 
   return (
     <div
-      className="h-[500px] overflow-auto border"
+      className="h-[500px] overflow-auto border bg-red-800"
       onScroll={(e) => setScrollTop(e.target.scrollTop)}
     >
       <div style={{ height: totalHeight }}>

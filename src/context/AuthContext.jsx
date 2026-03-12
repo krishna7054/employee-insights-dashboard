@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
   });
 
   const login = (username, password) => {
-    if (username === "testuser" && password === "Test123") {
+    if (username === "test" && password === "123456") {
       setUser(username);
       localStorage.setItem("authUser", username);
       return true;
