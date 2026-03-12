@@ -5,6 +5,8 @@ import heroImg from './assets/hero.png'
 // import './App.css'
 import Login from './pages/Login'
 import { Route, Router, Routes } from 'react-router-dom'
+import ProtectedRoute from './components/ProtectedRoute'
+import List from './pages/List'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,14 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route
+        path="/list"
+        element={
+          <ProtectedRoute>
+            <List />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   )
 }
